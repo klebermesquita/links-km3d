@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KM 3D Print | Links</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #1A3DFF;
+      --blue-light: #4D6FFF;
+      --blue-glow: rgba(26, 61, 255, 0.25);
+      --black: #0A0A0A;
+      --surface: #111118;
+      --card: #18181F;
+      --border: #2A2A3A;
+      --white: #FFFFFF;
+      --gray: #8888AA;
+      --gray-light: #CCCCDD;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Roboto', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      background: rgba(10,10,10,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-logo {
+      height: 64px;
+      width: auto;
+      display: block;
+    }
+
+    .header-logo-fallback {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .header-logo-fallback .brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      color: var(--white);
+      letter-spacing: 2px;
+    }
+
+    .header-logo-fallback .tagline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      color: var(--blue);
+      letter-spacing: 4px;
+    }
+
+    /* ─── MAIN ─── */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 60px;
+      max-width: 560px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Intro */
+    .intro {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .intro h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 3px;
+      color: var(--gray-light);
+      margin-bottom: 6px;
+    }
+
+    .intro p {
+      font-size: 13px;
+      color: var(--gray);
+      letter-spacing: 0.5px;
+    }
+
+    /* ─── BOTÕES ─── */
+    .links-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+    }
+
+    .link-btn {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 22px;
+      text-decoration: none;
+      color: var(--white);
+      transition: border-color 0.2s, background 0.2s, transform 0.15s, box-shadow 0.2s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .link-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--blue-glow) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .link-btn:hover {
+      border-color: var(--blue);
+      background: #1A1A28;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px var(--blue-glow);
+    }
+
+    .link-btn:hover::before {
+      opacity: 1;
+    }
+
+    .link-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Ícone / logo do botão */
+    .btn-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #000;
+      border: 1px solid #1A1A2A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      padding: 0;
+    }
+
+    .btn-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Texto do botão */
+    .btn-text {
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      letter-spacing: 1.5px;
+      color: var(--white);
+      line-height: 1.1;
+      display: block;
+    }
+
+    .btn-sublabel {
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 3px;
+      display: block;
+      letter-spacing: 0.3px;
+    }
+
+    /* Seta */
+    .btn-arrow {
+      flex-shrink: 0;
+      color: var(--border);
+      font-size: 18px;
+      transition: color 0.2s, transform 0.2s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .link-btn:hover .btn-arrow {
+      color: var(--blue);
+      transform: translateX(3px);
+    }
+
+    /* Destaque no primeiro botão */
+    .link-btn.featured {
+      border-color: var(--blue);
+      background: linear-gradient(135deg, #12122A 0%, var(--card) 100%);
+    }
+
+    .link-btn.featured .btn-label {
+      color: var(--blue-light);
+    }
+
+    /* Separador */
+    .divider {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 6px 0;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .divider span {
+      font-size: 10px;
+      color: var(--gray);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 20px 24px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .footer-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: var(--gray);
+      margin-bottom: 4px;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: #444460;
+    }
+
+    /* ─── LOGO KM no ícone ─── */
+    .km-logo-icon {
+      background: var(--blue);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px;
+      color: white;
+      letter-spacing: 1px;
+      border-radius: 9px;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 400px) {
+      .btn-label { font-size: 17px; }
+      main { padding: 28px 16px 50px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img
+      src="logo.png"
+      alt="KM 3D Print"
+      class="header-logo"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+    />
+    <div class="header-logo-fallback" style="display:none">
+      <span class="brand">KM 3D PRINT</span>
+      <span class="tagline">TAG YOURSELF</span>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <div class="intro">
+      <h1>NOSSOS LINKS</h1>
+      <p>Chaveiros personalizados, impressão 3D e muito mais</p>
+    </div>
+
+    <div class="links-stack">
+
+      <!-- PERSONALIZE SEU CHAVEIRO -->
+      <a class="link-btn featured" href="https://personalizados.kmoperacoes.com.br" target="_blank" rel="noopener">
+        <div class="btn-icon">
+          <img
+            src="logo.png"
+            alt="KM 3D"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'km-logo-icon\'>KM</div>';"
+          />
+        </div>
+        <div class="btn-text">
+          <span class="btn-label">PERSONALIZE SEU CHAVEIRO</span>
+          <span class="btn-sublabel">Escolha o modelo, cor e coloque seu nome</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <!-- COLEÇÃO GYM TAG -->
+      <a class="link-btn" href="https://personalizados.kmoperacoes.com.br#catalogo" target="_blank" rel="noopener">
+        <div class="btn-icon">
+          <img
+            src="logo.png"
+            alt="KM 3D"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'km-logo-icon\'>KM</div>';"
+          />
+        </div>
+        <div class="btn-text">
+          <span class="btn-label">COLEÇÃO GYM TAG</span>
+          <span class="btn-sublabel">Veja todos os modelos disponíveis</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <div class="divider"><span>fale com a gente</span></div>
+
+      <!-- WHATSAPP -->
+      <a class="link-btn" href="https://wa.me/5517991189229" target="_blank" rel="noopener">
+        <div class="btn-icon">
+          <!-- WhatsApp SVG -->
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="16" fill="#25D366"/>
+            <path d="M22.5 9.5C20.8 7.8 18.5 6.9 16 6.9C10.9 6.9 6.8 11 6.8 16.1C6.8 17.8 7.3 19.4 8.1 20.8L6.7 25.3L11.3 23.9C12.7 24.7 14.3 25.1 16 25.1C21.1 25.1 25.2 21 25.2 15.9C25.2 13.4 24.2 11.2 22.5 9.5ZM16 23.6C14.5 23.6 13 23.2 11.7 22.5L11.4 22.3L8.7 23.1L9.5 20.5L9.3 20.2C8.5 18.8 8.1 17.2 8.1 15.5C8.1 11.4 11.4 8.1 15.5 8.1C17.5 8.1 19.3 8.9 20.7 10.2C22.1 11.6 22.8 13.4 22.8 15.4C23.1 19.6 19.8 23.6 16 23.6ZM19.8 17.8C19.6 17.7 18.5 17.1 18.3 17C18.1 16.9 18 16.9 17.9 17.1C17.8 17.3 17.3 17.9 17.2 18C17.1 18.1 17 18.1 16.8 18C16.6 17.9 15.9 17.7 15.1 17C14.5 16.4 14 15.7 13.9 15.5C13.8 15.3 13.9 15.2 14 15.1C14.1 15 14.2 14.9 14.3 14.8C14.4 14.7 14.4 14.6 14.5 14.5C14.6 14.4 14.5 14.3 14.5 14.2C14.5 14.1 14 12.9 13.8 12.5C13.6 12.1 13.4 12.2 13.3 12.2H13C12.9 12.2 12.7 12.2 12.5 12.4C12.3 12.6 11.7 13.2 11.7 14.4C11.7 15.6 12.5 16.7 12.6 16.9C12.7 17 14 19 16 19.9C16.5 20.1 16.9 20.3 17.2 20.4C17.7 20.6 18.2 20.5 18.6 20.5C19 20.4 19.9 19.9 20.1 19.3C20.3 18.7 20.3 18.2 20.2 18.1C20.1 17.9 20 17.9 19.8 17.8Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="btn-text">
+          <span class="btn-label">TEM UM PROJETO?</span>
+          <span class="btn-sublabel">chama a gente que a gente imprime</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <div class="divider"><span>redes sociais</span></div>
+
+      <!-- INSTAGRAM -->
+      <a class="link-btn" href="https://instagram.com/km3dprinting_" target="_blank" rel="noopener">
+        <div class="btn-icon">
+          <!-- Instagram SVG gradient -->
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="ig1" cx="30%" cy="107%" r="150%">
+                <stop offset="0%" stop-color="#fdf497"/>
+                <stop offset="5%" stop-color="#fdf497"/>
+                <stop offset="45%" stop-color="#fd5949"/>
+                <stop offset="60%" stop-color="#d6249f"/>
+                <stop offset="90%" stop-color="#285AEB"/>
+              </radialGradient>
+            </defs>
+            <rect width="32" height="32" rx="8" fill="url(#ig1)"/>
+            <rect x="8" y="8" width="16" height="16" rx="4.5" stroke="white" stroke-width="1.8" fill="none"/>
+            <circle cx="16" cy="16" r="4" stroke="white" stroke-width="1.8" fill="none"/>
+            <circle cx="21" cy="11" r="1.1" fill="white"/>
+          </svg>
+        </div>
+        <div class="btn-text">
+          <span class="btn-label">SIGA-NOS NO INSTAGRAM</span>
+          <span class="btn-sublabel">@km3dprinting_</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <!-- TIKTOK -->
+      <a class="link-btn" href="https://tiktok.com/@km.3d.printing" target="_blank" rel="noopener">
+        <div class="btn-icon">
+          <!-- TikTok SVG -->
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="8" fill="#010101"/>
+            <path d="M21.5 7H18.3V19.8C18.3 21.2 17.2 22.3 15.8 22.3C14.4 22.3 13.3 21.2 13.3 19.8C13.3 18.4 14.4 17.3 15.8 17.3C16.1 17.3 16.3 17.4 16.6 17.4V14.2C16.3 14.1 16.1 14.1 15.8 14.1C12.6 14.1 10 16.7 10 19.9C10 23.1 12.6 25.7 15.8 25.7C19 25.7 21.6 23.1 21.6 19.9V13.1C22.7 13.9 24 14.4 25.5 14.4V11.2C23.3 11.1 21.5 9.3 21.5 7Z" fill="white"/>
+            <path d="M21.5 7H18.3V19.8C18.3 21.2 17.2 22.3 15.8 22.3C14.4 22.3 13.3 21.2 13.3 19.8C13.3 18.4 14.4 17.3 15.8 17.3C16.1 17.3 16.3 17.4 16.6 17.4V14.2C16.3 14.1 16.1 14.1 15.8 14.1C12.6 14.1 10 16.7 10 19.9C10 23.1 12.6 25.7 15.8 25.7C19 25.7 21.6 23.1 21.6 19.9V13.1C22.7 13.9 24 14.4 25.5 14.4V11.2C23.3 11.1 21.5 9.3 21.5 7Z" fill="#EE1D52" opacity="0.5"/>
+            <path d="M22 7.5H18.8V20.3C18.8 21.7 17.7 22.8 16.3 22.8C14.9 22.8 13.8 21.7 13.8 20.3" stroke="#69C9D0" stroke-width="0.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="btn-text">
+          <span class="btn-label">SIGA-NOS NO TIKTOK</span>
+          <span class="btn-sublabel">@km.3d.printing</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-brand">KM 3D PRINT</p>
+      <p class="footer-copy">© 2025 KM Operações · Campinas, SP</p>
+    </div>
+  </footer>
+
+</body>
+</html>
