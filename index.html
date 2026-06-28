@@ -48,7 +48,7 @@
     }
 
     .header-logo {
-      height: 64px;
+      height: 44px;
       width: auto;
       display: block;
     }
@@ -171,10 +171,9 @@
     }
 
     .btn-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      padding: 0;
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
     }
 
     .btn-icon svg {
@@ -307,7 +306,7 @@
   <!-- HEADER -->
   <header>
     <img
-      src="logo.png"
+      src="logo-horizontal.svg"
       alt="KM 3D Print"
       class="header-logo"
       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -328,34 +327,38 @@
 
     <div class="links-stack">
 
-      <!-- PERSONALIZE SEU CHAVEIRO -->
-      <a class="link-btn featured" href="https://personalizados.kmoperacoes.com.br" target="_blank" rel="noopener">
+      <!-- CATÁLOGO -->
+      <a class="link-btn featured" href="https://km3dprint.kmoperacoes.com.br/catalogo" target="_blank" rel="noopener">
         <div class="btn-icon">
-          <img
-            src="logo.png"
-            alt="KM 3D"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'km-logo-icon\'>KM</div>';"
-          />
+          <img src="logo-quadrada.svg" alt="KM 3D" />
         </div>
         <div class="btn-text">
-          <span class="btn-label">PERSONALIZE SEU CHAVEIRO</span>
-          <span class="btn-sublabel">Escolha o modelo, cor e coloque seu nome</span>
+          <span class="btn-label">CATÁLOGO</span>
+          <span class="btn-sublabel">Veja todos os nossos produtos</span>
         </div>
         <span class="btn-arrow">›</span>
       </a>
 
       <!-- COLEÇÃO GYM TAG -->
-      <a class="link-btn" href="https://personalizados.kmoperacoes.com.br#catalogo" target="_blank" rel="noopener">
+      <a class="link-btn" href="https://km3dprint.kmoperacoes.com.br/gymtag" target="_blank" rel="noopener">
         <div class="btn-icon">
-          <img
-            src="logo.png"
-            alt="KM 3D"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'km-logo-icon\'>KM</div>';"
-          />
+          <img src="logo-quadrada.svg" alt="KM 3D" />
         </div>
         <div class="btn-text">
           <span class="btn-label">COLEÇÃO GYM TAG</span>
-          <span class="btn-sublabel">Veja todos os modelos disponíveis</span>
+          <span class="btn-sublabel">Chaveiros personalizados para a academia</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <!-- NOSSO SITE -->
+      <a class="link-btn" href="https://km3dprint.kmoperacoes.com.br/" target="_blank" rel="noopener">
+        <div class="btn-icon">
+          <img src="logo-quadrada.svg" alt="KM 3D" />
+        </div>
+        <div class="btn-text">
+          <span class="btn-label">NOSSO SITE</span>
+          <span class="btn-sublabel">km3dprint.kmoperacoes.com.br</span>
         </div>
         <span class="btn-arrow">›</span>
       </a>
